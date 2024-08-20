@@ -77,10 +77,10 @@ alt="Image description"
 
 const createProductCardTemplate = image => { 
     return `
-    <li class="gallery-item" data-name="${image.description}">
+    <li class="gallery-item product-card" data-name="${image.description}">
     <a class="gallery-link" href="${image.original}">
     <img
-    class="gallery-image"
+    class="gallery-image product-card-img"
     src="${image.preview}"
     data-source="${image.original}"
     alt="${image.description}"
@@ -110,14 +110,14 @@ const onProductCardClick = event => {
     const productInfo = images.find(image => image.description === productName);
 
     const modalInstance = basicLightbox.create(`
-    <a class="gallery-link" href="${productInfo.original}">
+    
     <img
-    class="gallery-image"
+    class="gallery-image product-modal-img"
     src="${productInfo.preview}"
     data-source="${productInfo.original}"
     alt="${productInfo.description}"
     />
-    </a>
+    
         `
     );
 
